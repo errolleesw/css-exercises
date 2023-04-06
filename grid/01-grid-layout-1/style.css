@@ -1,3 +1,8 @@
+:root {
+  --colunn-width: 250px;
+  --row-width: 100px;
+}
+
 body, html {
   height: 100%;
   margin: 0;
@@ -8,6 +13,11 @@ body, html {
   height: 100%;
   padding: 16px;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: var(--colunn-width) calc(3 * var(--colunn-width));
+  grid-template-rows: var(--row-width) var(--row-width) calc(5 * var(--row-width))  var(--row-width) var(--row-width);
+  row-gap: 10px;
+  column-gap: 10px;
 }
 
 .container div {
@@ -17,22 +27,27 @@ body, html {
   font-weight: bold;
   color: white;
   border-radius: 15px;
+
 }
 
 .header {
   background-color: #FFDE22;
+  grid-area: 1 / 1 / 1 / 5;
 }
 
 .sidebar {
   background-color: #FF7755;
+  grid-area: 2 / 1 / 5 / 2;
 }
 
 .nav {
   background-color: #00DDFF;
+  grid-area: 2 / 2 / 2 / 5;
 }
 
 .article {
   background-color: #bccbde;
+  grid-area: 3 / 2 / 5 / 5;
 }
 
 .article p {
@@ -44,4 +59,5 @@ body, html {
 
 .footer {
   background-color: #393f4d;
+  grid-area: 5/1/5/5;
 }
